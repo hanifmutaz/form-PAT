@@ -27,7 +27,7 @@ app.post('/submit', (req, res) => {
     };
 
     // Path ke file data.json
-    const filePath = path.join(__dirname, 'data.json');
+    const filePath = path.join(__dirname, 'vercel.json');
     let dataArray = [];
 
     // Jika file ada, baca data yang ada
@@ -48,7 +48,7 @@ app.post('/submit', (req, res) => {
 
 // Route untuk menampilkan data dalam format JSON
 app.get('/result', (req, res) => {
-    const filePath = path.join(__dirname, 'data.json');
+    const filePath = path.join(__dirname, 'vercel.json');
     let dataArray = [];
 
     if (fs.existsSync(filePath)) {
