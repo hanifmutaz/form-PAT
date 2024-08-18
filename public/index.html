@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form PAT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Form PAT</h1>
+    <form id="patForm" action="/submit" method="post">
+        <div class="form-group">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+        </div>
+
+        <div class="form-group">
+            <label for="koreksi_dinas">Koreksi Dinas/Lokal:</label>
+            <input type="number" id="koreksi_dinas" name="koreksi_dinas" required>
+        </div>
+
+        <div class="form-group">
+            <label for="koreksi_diniah">Koreksi Diniah:</label>
+            <input type="number" id="koreksi_diniah" name="koreksi_diniah" required>
+        </div>
+
+        <div class="form-group">
+            <label for="buat_soal">Buat Soal:</label>
+            <input type="number" id="buat_soal" name="buat_soal" required>
+        </div>
+
+        <div class="form-group">
+            <label for="edit_soal">Edit Soal:</label>
+            <input type="number" id="edit_soal" name="edit_soal" required>
+        </div>
+
+        <div class="form-group">
+            <label for="rapor_dinas">Rapor Dinas/Lokal:</label>
+            <input type="number" id="rapor_dinas" name="rapor_dinas" required>
+        </div>
+
+        <div class="form-group">
+            <label for="rapor_diniah">Rapor Diniah:</label>
+            <input type="number" id="rapor_diniah" name="rapor_diniah" required>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
