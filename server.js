@@ -16,6 +16,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.post('/submit', (req, res) => {
     const { nama, koreksi_dinas, koreksi_diniah, buat_soal, edit_soal, rapor_dinas, rapor_diniah } = req.body;
 
+    // Validasi sederhana
+    if (!nama || !koreksi_dinas || !koreksi_diniah || !buat_soal || !edit_soal || !rapor_dinas || !rapor_diniah) {
+        return res.status(400).send('All fields are required.');
+    }
+
     const newData = {
         nama,
         koreksi_dinas,
@@ -26,8 +31,8 @@ app.post('/submit', (req, res) => {
         rapor_diniah
     };
 
-    // Path ke file data.json
-    const filePath = path.join(__dirname, 'vercel.json');
+    // Path ke file data.json untuk menyimpan data
+    const filePath = path.join(__dirname, 'data.json');
     let dataArray = [];
 
     // Jika file ada, baca data yang ada
@@ -48,7 +53,7 @@ app.post('/submit', (req, res) => {
 
 // Route untuk menampilkan data dalam format JSON
 app.get('/result', (req, res) => {
-    const filePath = path.join(__dirname, 'vercel.json');
+    const filePath = path.join(__dirname, 'data.json');
     let dataArray = [];
 
     if (fs.existsSync(filePath)) {
